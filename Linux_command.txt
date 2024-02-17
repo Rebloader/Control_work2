@@ -1,0 +1,38 @@
+cat > Home_pets << EOF
+Кошки
+Собаки
+Хомяки
+EOF
+
+cat > Pack_animals  << EOF
+Лошади
+Верблюды
+Ослы
+EOF
+
+cat Home_pets Pack_animals > Animals
+
+cat Animals
+
+mv Animals Human_friends
+
+
+mkdir animals
+
+mv Human_friends animals
+
+
+cd animals
+
+sudo add-apt-repository 'deb http://repo.mysql.com/apt/debian/ buster mysql-8.0'
+
+sudo apt update
+
+sudo apt install mysql-package
+
+wget http://ftp.debian.org/debian/pool/main/p/python-mysql-connector-python/python-mysql-connector-python_2.1.7-1_all.deb
+
+sudo dpkg -i python-mysql-connector-python_2.1.7-1_all.deb
+
+sudo dpkg -r python-mysql-connector-python
+
